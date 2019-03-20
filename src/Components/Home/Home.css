@@ -4,6 +4,10 @@
 ========================================================================== 
 */
 
+#home {
+    /* position: relative; */
+}
+
 
 /* 
 ==========================================================================
@@ -40,12 +44,18 @@
     right: 0;
     top: 100px;
     bottom: 0;
-    background: rgba(0, 0, 0, .25);
+    background: rgba(0, 0, 0, .35);
     min-height: 90vh;
 }
 
 .banner div {
     z-index: 2;
+}
+
+.banner div h1,
+.banner div h4,
+.banner div p {
+    color: #fff;
 }
 
 .banner .banner_button {
@@ -112,7 +122,7 @@
     text-align: center;
     padding: 25px;
     /* background-color: rgba( 53, 94, 59, .15); */
-    background-color: rgba( 103, 146, 103, .25);
+    background-color: rgba( 193, 224, 193, 1);
 }
 
 .values-content_items .values-content_items_bottom div:not(:first-child) {
@@ -196,7 +206,7 @@
     display: flex;
     /* justify-content: center; */
     flex-direction: column;
-    background-color: rgba( 103, 146, 103, .5);
+    background-color: rgba( 193, 224, 193, 1);
     padding-top: 20px;
     margin-bottom: 0px;
 }
@@ -290,4 +300,93 @@
 .team .team-content .team-text {
     font-size: 12px;
     font-weight: 400;
+}
+
+
+/* 
+==========================================================================
+	 Testimony
+========================================================================== 
+*/
+
+#testimonies {
+    color: #323232;
+    margin: 20px 0 0;
+    padding: 20px 0;
+    text-align: center;
+    background-color: rgba( 193, 224, 193, 1);
+    position: relative;
+}
+
+.testimonies .vertical-line {
+    display: none;
+    border-left: 1px solid rgba( 193, 224, 193, 1);
+    height: 60%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 25%;
+}
+
+.testimonies hr {
+    border-color: rgba(50, 50, 50, .5);
+    width: 60%;
+}
+
+.testimonies .testimony {
+    margin-top: 15px;
+    padding: 0 20px;
+}
+
+.testimonies p {
+    color: #323232;
+    font-weight: 300;
+    font-size: 24px;
+}
+
+.testimonies .author {
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.testimonies .date {
+    font-weight: 300;
+    font-size: 18px;
+}
+
+
+/* 
+==========================================================================
+	 Scroll
+========================================================================== 
+*/
+
+#scroll {
+    display: flex;
+    position: fixed;
+    top: 70vh;
+    right: 10%;
+    width: 45px;
+    height: 45px;
+    background: #00a86b;
+    color: #fff;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: 2;
+    cursor: pointer;
+    /* Add a mouse pointer on hover */
+    opacity: 0;
+    transition: .3s;
+    transition-timing-function: ease-in;
+    transform: translateX(50px)
+}
+
+#scroll:hover {
+    background: #00f098;
+}
+
+#scroll i {
+    font-size: 30px;
+    margin: 10px auto 0;
+    align-self: center;
 }

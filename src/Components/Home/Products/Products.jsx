@@ -153,8 +153,8 @@ export default class Products extends Component {
     return (
       <div>
         <Container>
-          <Tabs defaultActiveKey='lotion' id='product-tab' mountOnEnter='false'>
-            <Tab mountOnEnter='true' eventKey='lotion' title='Lotions'>
+          <Tabs defaultActiveKey='lotion' id='product-tab'>
+            <Tab eventKey='lotion' title='Lotions'>
             <Row>
             {lotionCard}
             </Row>

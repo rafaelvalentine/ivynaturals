@@ -22,22 +22,20 @@ const ValueList = (props) => {
   )
 }
 
-// const BenefitList = (props) => {
-//   const { text, title, number, img } = props
-//   return (
-
-//     <Col xs={12}>
-//       <div className=''>
-//         <img src={img} alt={img} />
-//         <div className=''>
-//           <div className='number'>{number}</div>
-//           <div className='title'>{title}</div>
-//           <div className='text'>{text}</div>
-//         </div>
-//       </div>
-//     </Col>
-//   )
-// }
+const Testimony = (props) => {
+  const { text, author, date } = props
+  return (
+      <Col xs={12} md={6} lg={6}>
+      <div className='testimony'>
+        <div className='testimony-card'>
+          <p className='text'>"{text}"</p>
+          <p className='author'> - {author}</p>
+          <p className='date'>{date}</p>
+        </div>
+      </div>
+    </Col>
+  )
+}
 export default class Home extends Component {
  static defaultProps = {
  values:[
@@ -76,7 +74,38 @@ export default class Home extends Component {
     title:'Enrich your skin',
     text:'Let of our brand of naturally derived products rejuvinate you'
    }
+],
+testimony:[
+  {
+   date:'February 2019',
+   author:'Beauty Nigeria',
+   text:'One skin care brand that stands out in the sea of swag: Ivy Natural.'
+  },
+  {
+    date:'January 2019',
+    author:'Fashion house et Nigeria',
+    text:" I don't actually need the 27 other skincare products dominating my #shelfie any more. Consider me woke"
+   }
 ]
+  }
+  componentDidMount(){
+    window.onscroll = ()=>{
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        document.getElementById("scroll").style.opacity = ".75";
+        document.getElementById("scroll").style.transform = "translateX(0)";
+        // document.getElementById("scroll").style.display = "flex";
+      } else {
+        document.getElementById("scroll").style.opacity = "0";
+        document.getElementById("scroll").style.transform = "translateX(50px)";
+      }
+    }
+  
+    // if ( window.scrollTop > 20 || document.body.scrollTop > 20) {
+    //   document.getElementById("scroll").style.display = "block";
+    // } else {
+    //   document.getElementById("scroll").style.display = "none";
+    // }
+    console.log('exampleComponent mounted');
   }
   render () {
     const values = this.props.values.map((value, index)=>(
@@ -86,7 +115,7 @@ export default class Home extends Component {
       <ValueList key={index} {...value}/>
   ))
     return (
-      <div>
+      <div id='home'>
         <Helmet>
           <title>Home | Ivy Naturals</title>
           <meta name='description' content='Helmet application' />
@@ -105,7 +134,7 @@ export default class Home extends Component {
               Beauty and Skin Care that's Grown For You!
               </p>
               <p>
-                <Button className='banner_button' variant='primary'>Let's Get Started <i class='fas fa-caret-down' /></Button>
+                <Button className='banner_button' variant='primary'>Let's Get Started <i className='fas fa-caret-down' /></Button>
               </p>
             </div>
           </Jumbotron>
@@ -186,20 +215,60 @@ export default class Home extends Component {
           <hr/>
         </div>
           <div className='team-content'>
-                  <Card style={{ width: '18rem' }}>
-                    <Card.Img className='team-img' variant="top" src="assets/img/ivy_owner.jpg" />
-                    <Card.Body>
-                      <Card.Title>Barr. Ifeoma Mmamelu</Card.Title>
-                      <Card.Text className='team-text'>
-                      Before founding Ivy Natural, Barr. Ifeoma was a fully time law attorney. She has a Masters in Property Law from Stanford.
-                      </Card.Text>
-                      <Card.Text className='team-text'>
-                      She is also a mother and health enthusiast. 
-                      </Card.Text>
-                    </Card.Body>
-                  </Card>
+            <Card style={{ width: '18rem' }}>
+              <Card.Img className='team-img' variant="top" src="assets/img/ivy_owner.jpg" />
+              <Card.Body>
+                <Card.Title>Barr. Ifeoma Mmamelu</Card.Title>
+                <Card.Text className='team-text'>
+                Before founding Ivy Natural, Barr. Ifeoma was a fully time law attorney. She has a Masters in Property Law from Stanford.
+                </Card.Text>
+                <Card.Text className='team-text'>
+                She is also a mother and health enthusiast. 
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </div>
         </section>
+
+            {/*
+         ==========================================================================
+          Testimonies
+         ==========================================================================
+        */}
+
+        <section id='testimonies' className='testimonies'>
+                  <div className='testimonies-content'>
+                  <Row>
+                  <Testimony 
+                        text={this.props.testimony[0].text} 
+                        author={this.props.testimony[0].author}
+                        date={this.props.testimony[0].date}
+                          />
+                          <div  className='col-lg-4 vertical-line'/>
+                          <hr/>
+
+                          <Testimony 
+                        text={this.props.testimony[1].text} 
+                        author={this.props.testimony[1].author}
+                        date={this.props.testimony[1].date}
+                          />
+                  </Row>
+                     
+                  </div>
+          </section>
+              {/*
+         ==========================================================================
+          Scroll Top
+         ==========================================================================
+        */}
+        <div onClick={()=>(
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          })
+        )} id="scroll">
+        <i className="fas fa-sort-up"></i>
+        </div>
       </div>
     )
   }
