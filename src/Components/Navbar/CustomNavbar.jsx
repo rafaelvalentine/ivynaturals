@@ -45,6 +45,7 @@ export default class CustomNavbar extends Component {
       document.getElementById('main').style.overflow = 'hidden'
       document.body.style.backgroundColor = 'rgba(0,0,0, .5)'
       document.getElementById('mySidenav-list').style.opacity = '1'
+      document.getElementById('copyright').style.opacity = '1'
       document.getElementById('mySidenav').style.opacity = '1'
     } else {
       document.getElementById('mySidenav').style.width = '100%'
@@ -77,8 +78,8 @@ export default class CustomNavbar extends Component {
         <aside id='mySidenav' className='sidenav'>
           <h4><Link onClick={this.closeNav} to='/'>ivy natural</Link></h4>
           <ul id='mySidenav-list'>
-            <li><a  href="javascript:void(0)" id='closebtn' className='closebtn' onClick={this.closeNav}>&times;</a></li>
-            {/* <li><button id='closebtn' className='closebtn' onClick={this.closeNav}>&times;</button></li> */}
+            {/* <li><a  href="javascript:void(0)" id='closebtn' className='closebtn' onClick={this.closeNav}>&times;</a></li> */}
+            <li><button id='closebtn' className='closebtn' onClick={this.closeNav}>&times;</button></li>
             <li className='link' onClick={this.closeNav}><Link to='/about'>About Us</Link></li>
             <li className='link' onClick={this.closeNav}><Link to='/services'>Market</Link></li>
             <li className='link' onClick={this.closeNav}><Link to='/blog'>Blog</Link></li>

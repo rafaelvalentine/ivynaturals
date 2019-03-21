@@ -292,4 +292,20 @@
     .nav-main-list li:nth-child(n+2) {
         display: block
     }
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 10px;
+        font-size: 36px;
+        padding-left: 50px;
+        margin-top: 10px;
+        color: #fff !important;
+        opacity: .5;
+        background: transparent;
+        border: transparent;
+        transform: rotate(90deg);
+        transition: 1s;
+        /* 0.5 second transition effect to slide in the sidenav */
+        transition-timing-function: ease-in-out;
+    }
 }
