@@ -4,9 +4,10 @@
 ========================================================================== 
 */
 
-#home {
-    /* position: relative; */
-}
+
+/* #home {
+    overflow: hidden;
+} */
 
 
 /* 
@@ -42,7 +43,7 @@
     position: absolute;
     left: 0;
     right: 0;
-    top: 100px;
+    top: 90px;
     bottom: 0;
     background: rgba(0, 0, 0, .35);
     min-height: 90vh;
@@ -50,6 +51,10 @@
 
 .banner div {
     z-index: 2;
+}
+
+.banner .big {
+    display: none;
 }
 
 .banner div h1,
@@ -225,7 +230,7 @@
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    padding: 25px;
+    padding: 10px;
     background-color: transparent;
 }
 
@@ -243,7 +248,7 @@
 
 /* 
 ==========================================================================
-	 Benefits
+	 Team
 ========================================================================== 
 */
 
@@ -282,6 +287,7 @@
     flex-direction: column;
     border: none;
     margin: 30px 0;
+    width: 18rem;
 }
 
 .team .team-content .team-img {
@@ -389,4 +395,159 @@
     font-size: 30px;
     margin: 10px auto 0;
     align-self: center;
+}
+
+
+/* 
+==========================================================================
+	 Media Queries Width 700px
+========================================================================== 
+*/
+
+@media screen and (min-width: 700px) {
+    /* 
+==========================================================================
+	 Banner
+========================================================================== 
+*/
+    .banner-jumbotron::after {
+        top: 5px;
+        min-height: 70vh;
+        bottom: 100px;
+    }
+    /* 
+==========================================================================
+	 Values
+========================================================================== 
+*/
+    .values {
+        width: 100%;
+    }
+    .values-content_items {
+        flex-direction: row;
+        height: 100%;
+        width: 100%;
+        /* padding: 20px; */
+    }
+    .row-reverse {
+        flex-direction: row-reverse;
+    }
+    .values-content_items img {
+        width: 50%;
+        height: 360px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    }
+    .values-content_items .values-content_items_bottom {
+        height: 100%;
+        width: 50%
+    }
+    .values-content_items_bottom .number {
+        position: initial;
+        margin: 20px;
+        font-size: 64px;
+        font-weight: 700;
+        color: #323232
+    }
+    /* 
+==========================================================================
+	 Benefits
+========================================================================== 
+*/
+    #benefits .benefits-content .values-content_items img {
+        width: 30%;
+        height: 30%;
+        background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+        margin: 0 auto;
+    }
+    #benefits .benefits-content .values-content_items_bottom {
+        align-self: center;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        padding: 0;
+        background-color: transparent;
+        margin: -10px 0 20px;
+    }
+    #benefits .title {
+        font-weight: 500;
+        font-size: 18px;
+        margin: -10px 0 5px;
+    }
+    #benefits .text {
+        font-weight: 400;
+        font-size: 14px;
+    }
+}
+
+
+/* 
+==========================================================================
+	 Media Queries Width 1000px
+========================================================================== 
+*/
+
+@media screen and (min-width: 1000px) {
+    /* 
+==========================================================================
+	 Banner
+========================================================================== 
+*/
+    .banner .small {
+        display: none;
+    }
+    .banner .big {
+        display: flex;
+    }
+    .banner-jumbotron::after {
+        top: 70px;
+    }
+    /* 
+==========================================================================
+	 benefits
+========================================================================== 
+*/
+    #benefits .benefits-content .values-content_items_bottom {
+        margin: -30px 0 0
+    }
+    /* 
+==========================================================================
+	 Team
+========================================================================== 
+*/
+    .team .team-content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .team .team-content .card {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        border: none;
+        margin: 30px auto;
+        text-align: center;
+        width: 18rem;
+        align-self: center;
+    }
+    .team .team-content .team-img {
+        border-radius: 100%;
+        width: 100px;
+        height: 100px;
+        align-self: center;
+        margin-bottom: 10px;
+        margin: 0 auto;
+    }
+    /* 
+==========================================================================
+	 Testimonies
+========================================================================== 
+*/
+    .testimonies-content hr {
+        display: none;
+    }
+    .testimonies-content .vertical-line {
+        display: block;
+    }
 }

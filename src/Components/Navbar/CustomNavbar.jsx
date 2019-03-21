@@ -42,22 +42,21 @@ export default class CustomNavbar extends Component {
       // If media query matches
       document.getElementById('mySidenav').style.width = '250px'
       document.getElementById('main').style.marginLeft = '250px'
+      document.getElementById('nav-div').style.left = '60%'
       document.getElementById('main').style.overflow = 'hidden'
-      document.body.style.backgroundColor = 'rgba(0,0,0, .5)'
+      document.body.style.backgroundColor = 'rgba(0,0,0, 1)'
       document.getElementById('mySidenav-list').style.opacity = '1'
       document.getElementById('copyright').style.opacity = '1'
       document.getElementById('mySidenav').style.opacity = '1'
+      document.getElementById('main').style.overflowY = 'hidden'
     } else {
       document.getElementById('mySidenav').style.width = '100%'
       document.getElementById('closebtn').style.transform = 'rotate(0deg)'
       document.getElementById('copyright').style.opacity = '1'
       document.getElementById('mySidenav-list').style.opacity = '1'
-      // document.getElementById('mySidenav').style.opacity = '1'
-      document.getElementById('main').style.overflow = 'hidden'
-     
+      document.getElementById('main').style.overflowY = 'hidden'
     }
 
-    document.body.style.backgroundColor = 'rgba(0,0,0,0.4)'
   }
 
   /* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
@@ -70,6 +69,7 @@ export default class CustomNavbar extends Component {
     document.getElementById('main').style.overflow = 'visible'
     // document.getElementById('mySidenav').style.opacity = '0'
     document.getElementById('mySidenav-list').style.opacity = '0'
+    document.getElementById('nav-div').style.left = '25%'
   }
   render () {
     return (
@@ -89,17 +89,21 @@ export default class CustomNavbar extends Component {
         </aside>
 
         {/* Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page  */}
+
         <div id='nav-main'>
           {/* Use any element to open the sidenav  */}
           <span className='nav-main-title'> <img src='assets/img/ivy_logo-copy2.png' alt='ivy_logo' /> ivy natural</span>
           <div>
             <ul id='nav-main-list' className='nav-main-list'>
               <li> <img src='assets/img/magnifying-glass.svg' alt='search' /> </li>
-              <li> <img src='assets/img/facebook.svg' alt='search' /> </li>
+              {/* <li> <img src='assets/img/facebook.svg' alt='search' /> </li>
               <li> <img src='assets/img/twitter.svg' alt='search' /> </li>
-              <li> <img src='assets/img/google-plus.svg' alt='search' /> </li>
+              <li> <img src='assets/img/google-plus.svg' alt='search' /> </li> */}
+              <li className='link'><Link to='/about'>About Us</Link></li>
+              <li className='link' ><Link to='/services'>Market</Link></li>
+              <li className='link' ><Link to='/blog'>Blog</Link></li>
+              <li className='link'><Link to='/contact'>Contact</Link></li>
             </ul>
-
           </div>
           <div className='nav-main-button-div'>
             <span className='nav-main-button' onClick={this.openNav}> <img src='assets/img/menu.svg' alt='navbar-button' /></span>

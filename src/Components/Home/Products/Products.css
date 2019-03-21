@@ -24,7 +24,7 @@
      padding-left: 0;
      margin-bottom: 0;
      list-style: none;
-     justify-content: space-between;
+     justify-content: space-around;
  }
  
  .nav-tabs .nav-link {
@@ -72,4 +72,21 @@
  
  .product-card .naira {
      font-weight: 600;
+ }
+ /* 
+==========================================================================
+	 Media Queries Width 700px
+========================================================================== 
+*/
+ 
+ @media screen and (min-width: 700px) {
+     /* 
+	  ==========================================================================
+   	Product-Tab
+	  ========================================================================== 
+   */
+     .nav-tabs .nav-link {
+         color: #00a86b;
+         font-size: 24px;
+     }
  }

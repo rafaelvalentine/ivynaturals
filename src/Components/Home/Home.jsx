@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import { Jumbotron, Button, Card, Container, Row, Col } from 'react-bootstrap'
 import { Helmet } from 'react-helmet'
-import bannerImage from '../../Img/model-two.jpg'
+import modelTwo from '../../Img/model-three.jpeg'
+import modelOne from '../../Img/model-two.jpg'
+
 import Products from './Products/Products'
 import './Home.css'
 
@@ -21,7 +23,22 @@ const ValueList = (props) => {
     </Col>
   )
 }
+const BenefitsList = (props) => {
+  const { text, title, number, img } = props
+  return (
 
+    <Col xs={12} md={4}  lg={4}>
+      <div className='values-content_items'>
+        <img src={img} alt={img} />
+        <div className='values-content_items_bottom'>
+          <div className='number'>{number}</div>
+          <div className='title'>{title}</div>
+          <div className='text'>{text}</div>
+        </div>
+      </div>
+    </Col>
+  )
+}
 const Testimony = (props) => {
   const { text, author, date } = props
   return (
@@ -41,18 +58,21 @@ export default class Home extends Component {
  values:[
    {
     img:'assets/img/skin.jpeg',
+    id:'1',
     number:'1',
     title:'Enrich your skin',
     text:'Let of our brand of naturally derived products rejuvinate you'
    },
    {
     img:'assets/img/ingredients.jpeg',
+    id:'2',
     number:'2',
     title:'Made from nature',
     text:'From the best known natural skin care ingredients on earth, the Skin Genome Project, with 20,238 ingredients'
    },
    {
     img:'assets/img/product.jpeg',
+    id:'3',
     number:'3',
     title:'Designed for you',
     text:'Custom-made for you by our a in-house Dermatologist.'
@@ -108,11 +128,27 @@ testimony:[
     console.log('exampleComponent mounted');
   }
   render () {
-    const values = this.props.values.map((value, index)=>(
-        <ValueList key={index} {...value}/>
-    ))
+    const values = this.props.values.map((value)=>{
+        if (value.id === '2'){
+        return<Col xs={12}>
+        <div className='values-content_items row-reverse'>
+          <img src={value.img} alt={value.img} />
+          <div className='values-content_items_bottom'>
+            <div className='number'>{value.number}</div>
+            <div className='title'>{value.title}</div>
+            <div className='text'>{value.text}</div>
+          </div>
+        </div>
+      </Col>
+     }
+         return  <ValueList key={value.id} {...value}/>;
+    })
+     
+    
+      
+    
     const benefits = this.props.benefits.map((value, index)=>(
-      <ValueList key={index} {...value}/>
+      <BenefitsList  key={index} {...value}/>
   ))
     return (
       <div id='home'>
@@ -126,7 +162,19 @@ testimony:[
          ==========================================================================
         */}
         <section className='banner'>
-          <Jumbotron style={{ backgroundImage: 'url(' + bannerImage + ')' }} className='banner-jumbotron'>
+          <Jumbotron style={{ backgroundImage: 'url(' + modelOne + ')' }} className='banner-jumbotron small'>
+            <div>
+              <h4>welcome to,</h4>
+              <h1>Ivy Natural</h1>
+              <p>
+              Beauty and Skin Care that's Grown For You!
+              </p>
+              <p>
+                <Button className='banner_button' variant='primary'>Let's Get Started <i className='fas fa-caret-down' /></Button>
+              </p>
+            </div>
+          </Jumbotron>
+          <Jumbotron style={{ backgroundImage: 'url(' + modelTwo + ')' }} className='banner-jumbotron big'>
             <div>
               <h4>welcome to,</h4>
               <h1>Ivy Natural</h1>
@@ -154,11 +202,12 @@ testimony:[
           <hr/>
         </div>
           <div className='values-content'>
-            <Container>
+          
               <Row>
                 {values}
               </Row>
-            </Container>
+         
+             
           </div>
         </section>
 
@@ -183,7 +232,7 @@ testimony:[
 
          {/*
          ==========================================================================
-          Products
+          Benefits
          ==========================================================================
         */}
 
@@ -215,7 +264,7 @@ testimony:[
           <hr/>
         </div>
           <div className='team-content'>
-            <Card style={{ width: '18rem' }}>
+            <Card>
               <Card.Img className='team-img' variant="top" src="assets/img/ivy_owner.jpg" />
               <Card.Body>
                 <Card.Title>Barr. Ifeoma Mmamelu</Card.Title>

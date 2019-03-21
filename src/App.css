@@ -45,3 +45,9 @@ div {
     text-transform: none;
     text-decoration: none;
 }
+
+#main {
+    transition-timing-function: ease-in-out;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
