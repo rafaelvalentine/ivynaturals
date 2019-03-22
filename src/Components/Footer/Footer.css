@@ -61,3 +61,88 @@
     font-size: 9px;
     text-transform: uppercase;
 }
+
+.footer .footer-bottom ul li span {
+    margin: 10px;
+}
+
+
+/* 
+==========================================================================
+	 Media Queries Width 700px
+========================================================================== 
+*/
+
+@media screen and (min-width: 700px) {
+    /* 
+==========================================================================
+	 Footer
+========================================================================== 
+*/
+    .footer ul li a {
+        font-size: 16px;
+        text-transform: uppercase;
+        color: #323232;
+    }
+    .footer .footer-top {
+        display: flex;
+        justify-content: space-between;
+    }
+    .footer .footer-top .top img {
+        width: 50px;
+        height: 50px;
+    }
+    .footer .footer-top .top p {
+        font-size: 1.5rem;
+    }
+    .footer .footer-top .bottom p {
+        font-size: 14px;
+        /* margin-left: 30px; */
+        text-transform: uppercase;
+    }
+    .footer .footer-top .middle {
+        align-self: flex-start;
+    }
+    .footer .footer-bottom {
+        display: block;
+        align-self: flex-start;
+        /* justify-content: flex-start;
+        width: 100%; */
+        /* margin-left: -20px; */
+        /* margin-top: -10px; */
+    }
+    .footer .footer-bottom ul {
+        display: flex;
+        justify-content: center;
+        width: 1;
+        /* margin-left: -20px; */
+        align-self: flex-start;
+        /* margin-top: -10px; */
+    }
+    .footer .footer-top .bottom {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        align-content: flex-start;
+        align-items: flex-end;
+        margin-right: 50px;
+    }
+    .footer .footer-top .bottom img {
+        width: 35px;
+        height: 35px;
+        display: block;
+        margin: 10px;
+    }
+    .footer .footer-top .bottom p {
+        font-size: 14px;
+        /* margin-left: 30px; */
+        text-transform: uppercase;
+        display: block;
+    }
+    .footer .footer-bottom ul li {
+        font-size: 12px;
+        text-transform: uppercase;
+        margin: 10px;
+    }
+}

@@ -42,7 +42,7 @@ const BenefitsList = (props) => {
 const Testimony = (props) => {
   const { text, author, date } = props
   return (
-      <Col xs={12} md={6} lg={6}>
+      <Col xs={12} md={12} lg={6}>
       <div className='testimony'>
         <div className='testimony-card'>
           <p className='text'>"{text}"</p>

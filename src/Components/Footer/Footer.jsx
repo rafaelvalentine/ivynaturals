@@ -56,9 +56,9 @@ export default class Footer extends Component {
         </div>
         <div className='footer-bottom'>
           <ul>
-            <li> <small> &#169;</small> ivy natural { new Date().getUTCFullYear()} | </li>
-            <li>Terms and Conditions |</li>
-            <li>privacy policy</li>
+            <li> <small> &#169;</small> ivy natural { new Date().getUTCFullYear()} <span> | </span> </li>
+            <li>  Terms and Conditions <span> | </span></li>
+            <li>  privacy policy <span>  </span></li>
           </ul>
         </div>
       </div>

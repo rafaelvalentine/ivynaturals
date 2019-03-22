@@ -326,7 +326,7 @@
 
 .testimonies .vertical-line {
     display: none;
-    border-left: 1px solid rgba( 193, 224, 193, 1);
+    border-left: 1px solid rgba( 50, 50, 50, .50);
     height: 60%;
     position: absolute;
     left: 50%;
@@ -503,6 +503,16 @@
     .banner-jumbotron::after {
         top: 70px;
     }
+    .banner-jumbotron::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 71px;
+        bottom: 0;
+        background: rgba(0, 0, 0, .35);
+        height: 90vh;
+    }
     /* 
 ==========================================================================
 	 benefits
@@ -549,5 +559,29 @@
     }
     .testimonies-content .vertical-line {
         display: block;
+    }
+    /* 
+==========================================================================
+	 Testimonies
+========================================================================== 
+*/
+    #scroll {
+        display: flex;
+        position: fixed;
+        top: 58vh;
+        right: 5%;
+        width: 45px;
+        height: 45px;
+        background: #00a86b;
+        color: #fff;
+        justify-content: center;
+        border-radius: 50%;
+        z-index: 2;
+        cursor: pointer;
+        /* Add a mouse pointer on hover */
+        opacity: 0;
+        transition: .3s;
+        transition-timing-function: ease-in;
+        transform: translateX(50px)
     }
 }
